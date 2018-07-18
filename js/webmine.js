@@ -404,7 +404,7 @@ app.clearField = function(){
 	$(".field-cell").on( "mousedown", app.cellMouseDown );
 	$(".field-cell").on( "mouseup", app.cellMouseUp );
 	$(".field-cell").on( "contextmenu", app.prevent );
-	$(".field-row").css({'min-width': 1 + app.W * $(".field-cell:first").width() + 'px'});
+	$(".field-row").css({'min-width': 1 + app.W * 20 + 'px'});
 
 	// Сгенерируем мины   
 	for( var j = 0; j < app.MineCount; j++) {
