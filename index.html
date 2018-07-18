@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Webmine 2.0</title>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/database.js"></script>
+	<script src="js/webmine.js?6"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/solid.css" integrity="sha384-S2gVFTIn1tJ/Plf+40+RRAxBCiBU5oAMFUJxTXT3vOlxtXm7MGjVj62mDpbujs4C" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/fontawesome.css" integrity="sha384-0b7ERybvrT5RZyD80ojw6KNKz6nIAlgOKXIcJ0CV7A6Iia8yt2y1bBfLBOwoc9fQ" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/webmine.css?5">
+</head>
+<body>
+	<div id="layout" class="layout hidden">
+		<div class="menu">
+			<div class="menu-item" data-target="#settings">{menu_settings}</div>
+			<div class="menu-item active" data-target="#game">{menu_game}</div>
+			<div class="menu-item" data-target="#scores">{menu_scores}</div>
+		</div>
+		<div class="pages">
+			<div class="pages-item" id="settings">
+				<div class="ac bdb">{menu_settings}</div>
+				<div class="row oh">
+					{name}: <input type="text" id="iName" class="name" value="Player">
+				</div>
+				<div class="row">
+					<input type="radio" name="iGameMode" id="rbEasy" value="1">
+					<label for="rbEasy">{mode_easy}</label>
+				</div>
+				<div class="row">
+					<input type="radio" name="iGameMode" id="rbMedium" value="2">
+					<label for="rbMedium">{mode_medium}</label>
+				</div>
+				<div class="row">
+					<input type="radio" name="iGameMode" id="rbHard" value="3">
+					<label for="rbHard">{mode_hard}</label>
+				</div>
+				<div class="row bdb">
+					<input type="radio" name="iGameMode" id="rbCustom" value="4">
+					<label for="rbCustom">{mode_custom}</label>
+				</div>
+				<div class="cusomSettings hidden">
+					<div class="row oh">
+						{width}: <input type="number" id="iCustomW" class="number fr" value="9">
+					</div>
+					<div class="row oh">
+						{height}: <input type="number" id="iCustomH" class="number fr" value="9">
+					</div>
+					<div class="row oh">
+						{mines}: <input type="number" id="iCustomMines" class="number fr" value="10">
+					</div>
+					<div class="row ac">
+						<button id="btnAply">{apply}</button>
+					</div>
+				</div>
+			</div>
+			<div class="pages-item active" id="game">
+				<div class="game">
+					<div class="panel">
+						<div class="panel-col fr"><span class="display" id="dTime">0</span></div>
+						<div class="panel-col fl"><span class="display" id="dMinesLeft">10</span></div>
+						<div class="panel-face"><span class="face-1" id="dFace"></span></div>
+					</div>
+					<div class="field"></div>
+					<div class="status"></div>
+				</div>
+			</div>
+			<div class="pages-item scores" id="scores">
+				<div class="ac bdb">{menu_scores}</div>
+				<div class="scores-line row bdb">{mode_easy}: <span id="hsNovice">999</span></div>
+				<div class="scores-line row bdb">{mode_medium}: <span id="hsMedium">999</span></div>
+				<div class="scores-line row bdb">{mode_hard}: <span id="hsProfi">999</span></div>
+				<div class="ac bdb mt2">{hiscores}</div>
+				<div class="hiscores"></div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

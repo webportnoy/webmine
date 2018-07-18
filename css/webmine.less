@@ -1,0 +1,110 @@
+/* Helpers */
+.fl{float: left;}
+.fr{float: right;}
+.ac{text-align: center;}
+.ar{text-align: right;}
+.hidden{display:none;}
+.cloack{position: absolute;left: -5000px;}
+.clear{clear: both;float: none;display: block;}
+.clearfix{&:after {content:".";display:block;height:0;clear:both;visibility:hidden;}}
+.oh{overflow: hidden;}
+.mt{margin-top: 1em;}
+.mb{margin-bottom: 1em;}
+.ml{margin-left: 1em;}
+.mr{margin-right: 1em;}
+.mt2{margin-top: 2em;}
+.mb2{margin-bottom: 2em;}
+.ml2{margin-left: 2em;}
+.mr2{margin-right: 2em;}
+.p0{padding: 0;}
+.m0{margin: 0;}
+.nobr{white-space: nowrap;}
+.toe{-ms-text-overflow: ellipsis;text-overflow: ellipsis;overflow: hidden;}
+.wbb{-ms-word-break: break-all;word-break: break-all;}
+.row{margin: 4px 0;}
+
+/* Sprites */
+.spos1( @pos, @step: 15, @start: 0 ){background-position: 0 (-1px*@pos*@step - @start);}
+.num( @n:'', @c:"#000" ){
+	background: #c0c0c0;border-right: 1px solid #fff;border-bottom: 1px solid #fff;
+	&:before{content: @n;color: @c;font-style: normal;font-family: mono;font-weight: bold;}
+}
+.emoji{font-family: apple color emoji,segoe ui emoji,notocoloremoji,segoe ui symbol,android emoji,emojisymbols,emojione mozilla,Twemoji Mozilla;}
+
+[class^='ico-'],
+[class*=' ico-']{
+	display: block;width: 20px;height: 20px;font-size: 18px;line-height: 20px;background: url(../img/sprite.png) 0 15px no-repeat;box-sizing:border-box;text-align: center;
+	&:before{content: "";}
+}
+.fa(@ct:'', @cl:'#000'){font-family: "Font Awesome 5 Free";font-weight: 900;font-style: normal;color: @cl;background: #c0c0c0;
+	&:before{content: @ct;}
+}
+.green{color: #006000;}
+.ico{
+	&-0{.num();}
+	&-1{.num( "1", #0000ff);}
+	&-2{.num( "2", #008000);}
+	&-3{.num( "3", #ff0000);}
+	&-4{.num( "4", #000080);}
+	&-5{.num( "5", #800000);}
+	&-6{.num( "6", #008080);}
+	&-7{.num( "7", #0000ff);}
+	&-8{.num( "8", #ff0000);}
+	&-blank{background: #c0c0c0;border: 2px solid #808080;border-top-color: #fff;border-left-color: #fff;}
+	&-blowmine{.num("💥", red);}
+	&-coolmine{/*.num("💣", black);*/.fa("\f1e2");}
+	&-down{background: #c0c0c0;border: 2px solid #808080;border-bottom-color: #fff;border-right-color: #fff;}
+	&-flag{.num("🚩",red);font-size: 12px;line-height: 14px;background: #c0c0c0;border: 2px solid #808080;border-top-color: #fff;border-left-color: #fff;}
+	&-wrong{.num("❌", red);}
+}
+
+body{margin: 0;font-family: sans-serif;font-size: 12px;}
+.layout{margin: 20px;}
+.bdb{border-bottom: 1px solid #c0c0c0;padding-bottom: 6px;margin-bottom: 6px;}
+.menu{
+	@media (min-width:980px){display: none;}
+
+	border-bottom: 1px solid #ccc;.clearfix;text-align: center;font-size: 1.5em;
+	&-item{display: inline-block;margin-right: 10px;cursor: pointer;border-bottom: 2px solid transparent;margin-bottom: -1px;
+		&:hover,&.active{border-bottom-color: #000;}
+	}
+}
+
+.pages{display:flex;justify-content: center;
+	&-item{padding: 10px;margin: 10px;/* border: 1px solid #ccc; */
+		@media (max-width:979px){
+			display: none;
+			&.active{display: block;}
+		}
+		&#settings,&#scores{min-width: 200px;}
+	}
+}
+.panel{
+	background: #c0c0c0;padding: 4px;overflow: hidden;border-bottom: 1px solid #fff;
+	&-face{width: 32px;margin: 0 auto;color: yellow;font-size: 32px;line-height: 32px;overflow: hidden;cursor: pointer;}
+}
+.game{border: 2px solid #aaa;}
+.field{
+	&-row{overflow: hidden;}
+	&-cell{display: block;float: left;}
+}
+
+.display{color: red;background: black;display: inline-block;padding: 2px 6px;min-width: 30px;text-align: center;margin: 6px 2px;}
+.scores{
+	&-line{
+		span{float: right;}
+	}
+}
+
+.number{width: 50px;}
+.name{width: 100px;}
+
+
+
+
+
+
+
+
+
+
